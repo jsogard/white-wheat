@@ -1,39 +1,38 @@
 import React from 'react';
 import './App.css';
-import Browse from './Browse.js';
+import Browse from './pages/Browse.js';
+import Home from './pages/Home.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import {
+  Container,
+  Row, Col
+} from "react-bootstrap";
 
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/browse">Browse</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/browse">
-            <Browse />
-          </Route>
-          <Route path="/">
-            <p> we at home </p>
-          </Route>
-        </Switch>
-      </div>
+      <Container>
+        <Row>
+          <Col sm={2}><Link to="/">Home</Link></Col>
+          <Col sm={2}><Link to="/browse">Browse</Link></Col>
+        </Row>
+        <Row>
+          <Switch>
+            <Route path="/browse">
+              <Browse />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Row>
+      </Container>
     </Router>
   );
 }

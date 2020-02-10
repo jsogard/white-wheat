@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+:root {
+  --main-bg-color: #fdfff7;
+  --main-text-color: #464f51;
+  --main-accent-color: #FF9F1C;
+  --alt-bg-color: #F7EF99;
+  --alt-text-color: #fdfff7;
+}
+
+body, #root {
+  background-color: var(--alt-bg-color);
+}
+
+.container {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: var(--main-accent-color);
+}
