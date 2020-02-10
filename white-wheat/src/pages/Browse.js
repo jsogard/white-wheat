@@ -1,10 +1,11 @@
 import React from 'react';
 import './Browse.css';
+import HobbyCard from '../components/HobbyCard'; 
 import {GetAllHobbies} from '../data/hobbyService';
 
 function Browse() {
 	const hobbies = GetHobbies().map((hobby) => 
-			<li>{hobby.title}</li>
+			<HobbyCard Hobby={hobby} />
 		);
 	return (
 		<div>
